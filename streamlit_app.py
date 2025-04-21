@@ -1,5 +1,9 @@
+import os
 import streamlit as st
 import requests
+
+# Detect environment (Docker or Local)
+API_BASE_URL = "http://api:8000" if os.getenv("DOCKER") else "http://127.0.0.1:8000"
 
 st.set_page_config(page_title="Candidate Evaluation", layout="centered")
 st.title("Recruitment Prediction App")
@@ -11,10 +15,9 @@ score = st.number_input("Technical Score (0 - 100)", min_value=0.0, max_value=10
 
 # Predict button
 if st.button("Predict"):
-    # Send data to FastAPI endpoint
     try:
         response = requests.post(
-            url="http://api:8000/predict",
+            url=f"{API_BASE_URL}/predict",
             json={"experience_years": experience, "technical_score": score}
         )
 
