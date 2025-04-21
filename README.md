@@ -14,6 +14,29 @@ The system consists of:
 
 ---
 
+## File Structure
+
+```
+SVM_case/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── README.md
+├── data.csv
+├── data_generator.py          # Generates synthetic candidate data
+├── model_training.py          # Trains and saves the SVM model
+├── visualize_boundary.py      # Optional: Plots decision boundaries
+├── predict_user_input.py      # Command-line prediction tool
+├── streamlit_app.py           # Web interface for predictions
+├── main.py                    # FastAPI backend API
+├── utils.py                   # Helper functions for scaling
+└── model_files/               # Contains model.pkl and scaler.pkl
+    ├── model.pkl
+    └── scaler.pkl
+```
+
+---
+
 ## Components
 
 ### 1. Core Python Scripts

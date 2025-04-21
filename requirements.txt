@@ -1,8 +1,10 @@
-fastapi
-uvicorn
-pandas
-numpy
-scikit-learn
+fastapi==0.115.12
+uvicorn==0.34.2
+pandas==2.2.3
+numpy==2.2.5
+scikit-learn==1.6.1
 joblib
 requests
-streamlit
+streamlit==1.44.1
+matplotlib==3.9.2
+Faker==37.1.0
